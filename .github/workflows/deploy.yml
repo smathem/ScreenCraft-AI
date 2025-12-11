@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          # Removed cache: 'npm' because it requires a lockfile to exist, causing the workflow to fail if package-lock.json is missing.
 
       - name: Install dependencies
         # Changed from 'npm ci' to 'npm install' because package-lock.json might not exist yet
